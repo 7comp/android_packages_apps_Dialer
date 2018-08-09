@@ -29,7 +29,7 @@ import com.android.incallui.call.DialerCall;
 public class DefaultErrorDialog implements DisconnectDialog {
 
   @Override
-  public boolean shouldShow(DisconnectCause disconnectCause) {
+  public boolean shouldShow(DialerCall call, DisconnectCause disconnectCause) {
     return !TextUtils.isEmpty(disconnectCause.getDescription())
         && (disconnectCause.getCode() == DisconnectCause.ERROR
             || disconnectCause.getCode() == DisconnectCause.RESTRICTED);
